@@ -8,6 +8,11 @@ const port = process.env.PORT
 
 const app = express()
 
+app.use((req, res, next) => {
+  req.url = `/url${req.url}`;
+  next();
+ })
+
 
 app.use(express.json());
 app.use(cors());
