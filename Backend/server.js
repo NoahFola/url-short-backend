@@ -1,12 +1,14 @@
 const  express = require("express");
 const cors = require('cors');
-const dotenv = require("dotenv")
-dotenv.config();
-const url = require("./routes/url.js")
-const port = process.env.PORT
+const url = require("./routes/url")
 
 
 const app = express()
+
+app.use((req, res, next) => {
+  req.url = `/url${req.url}`;
+  next();
+ })
 
 
 app.use(express.json());
@@ -20,9 +22,6 @@ app.use((req, res, next) => {
 
 app.use("/url",  url)
 
+module.exports = app;
 
 
-
-app.listen(process.env.PORT, () => {
-  console.log(`Example app listening on port ${port}`)
-})

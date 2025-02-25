@@ -53,6 +53,6 @@ const dbSync = async () => {
     }
 }
 
-dbSync()
 
-module.exports = URL; 
+
+module.exports = {URL, sequelize, dbSync}; 

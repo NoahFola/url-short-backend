@@ -1,4 +1,4 @@
-const URL = require("../models/url.js")
+const {URL} = require("../models/url.js")
 const {generateShortCode} = require('../utils/generateShortcode.js')
 const {saveNewUrl} = require('../utils/saveNewUrl.js')
 
